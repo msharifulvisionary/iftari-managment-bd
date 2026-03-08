@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Noto Sans Bengali", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Noto Sans Bengali", ui-serif, Georgia, serif;
+}
+
+body {
+  font-family: "Noto Sans Bengali", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Noto Sans Bengali", sans-serif;
+}
+
+/* Fix for PDF and Image export cut-offs on mobile */
+.exporting-mode {
+  width: 1024px !important;
+  max-width: none !important;
+  overflow: visible !important;
+}
+
+.exporting-mode .overflow-x-auto {
+  overflow: visible !important;
+}
+
+.exporting-mode .action-col {
+  display: none !important;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}
